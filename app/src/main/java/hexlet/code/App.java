@@ -1,4 +1,6 @@
 package hexlet.code;
+import java.util.Random;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -6,6 +8,30 @@ public class App {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Welcome to the Brain Games!");
+        Scanner scanner = new Scanner(System.in);
+        String greetingMessage = "Welcome to the Brain Games!";
+        String greet = "1";
+        String even = "2";
+
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.println("0 - Exit");
+        System.out.println("1 - Greet");
+        System.out.println("2 - Even");
+        String choice = scanner.next();
+        System.out.println("Your choice: " + choice);
+
+        if (choice.equals(greet)) {
+            System.out.println(greetingMessage);
+            System.out.println("May I have your name? ");
+            String userName = scanner.next();
+            Cli.greeting(userName);
+        }
+
+
+        if (choice.equals(even)) {
+            Even.gamingEven();
+        }
+
+        scanner.close();
     }
 }
