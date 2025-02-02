@@ -30,8 +30,7 @@ public class Even {
                 System.out.println("Correct!");
                 countOfWinners++;
             } else {
-                System.out.println("'" + isEvenAnswer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + correctAnswer + "'");
+                Engine.showFail(isEvenAnswer, correctAnswer);
                 System.out.println("Let's try again, " + userName);
                 break;
             }
