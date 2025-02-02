@@ -1,5 +1,4 @@
 package hexlet.code;
-import java.util.Random;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -12,11 +11,9 @@ public class App {
         String greetingMessage = "Welcome to the Brain Games!";
         String greet = "1";
         String even = "2";
+        String calc = "3";
 
-        System.out.println("Please enter the game number and press Enter.");
-        System.out.println("0 - Exit");
-        System.out.println("1 - Greet");
-        System.out.println("2 - Even");
+        Engine.showChoice();
         String choice = scanner.next();
         System.out.println("Your choice: " + choice);
 
@@ -30,6 +27,10 @@ public class App {
 
         if (choice.equals(even)) {
             Even.gamingEven();
+        }
+
+        if (choice.equals(calc)) {
+            Calc.count();
         }
 
         scanner.close();
