@@ -12,6 +12,7 @@ public class App {
         String greet = "1";
         String even = "2";
         String calc = "3";
+        String gcd = "4";
 
         Engine.showChoice();
         String choice = scanner.next();
@@ -31,6 +32,10 @@ public class App {
 
         if (choice.equals(calc)) {
             Calc.count();
+        }
+
+        if(choice.equals(gcd)) {
+            GCD.findGCD();
         }
 
         scanner.close();
