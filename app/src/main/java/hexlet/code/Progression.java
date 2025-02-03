@@ -1,9 +1,11 @@
 package hexlet.code;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import  java.util.Scanner;
 import  java.util.Random;
 
-public class GCD {
-    public static void findGCD() {
+public class Progression {
+    public static void getProgression() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         String greetingMessage = "Welcome to the Brain Games!";
@@ -13,31 +15,41 @@ public class GCD {
         String userName = scanner.next();
         Cli.greeting(userName);
         System.out.println("");
-        System.out.println("Find the greatest common divisor of given numbers.");
+        System.out.println("What number is missing in the progression?");
 
         int countOfWinners = 0;
 
         for (var i = 0; i < 3; i++) {
-            int randomNumberOne = random.nextInt(300) + 1;
-            int randomNumberTwo = random.nextInt(20) + 1;
-            int gcdNumber = 0;
+            int start = random.nextInt(5);
+            int step = random.nextInt(8) + 3;
+            int[] progression = new int[10];
 
-            for (var j = 1; j <= Math.max(randomNumberOne, randomNumberTwo) / 2; j++) {
-                if (randomNumberOne % j == 0 && randomNumberTwo % j == 0) {
-                    gcdNumber = j;
+            for (var j = 0; j < progression.length; j++) {
+                progression[j] = start + j * step;
+            }
+
+            int hiddenIndex = random.nextInt(9);
+            int hiddenValue = progression[hiddenIndex];
+            System.out.print("Question: ");
+
+            for (int num : progression) {
+                if (num == hiddenValue) {
+                    System.out.print(".. ");
+                } else {
+                    System.out.print(num + " ");
                 }
             }
 
-            System.out.println("Question: " + randomNumberOne + " " + randomNumberTwo);
+            System.out.println();
             System.out.println("Your answer: ");
 
             String calcResultAnswer = scanner.next();
 
-            if (String.valueOf(gcdNumber).equals(calcResultAnswer)) {
+            if (String.valueOf(hiddenValue).equals(calcResultAnswer)) {
                 System.out.println("Correct!");
                 countOfWinners++;
             } else {
-                Engine.showFail(calcResultAnswer, gcdNumber);
+                Engine.showFail(calcResultAnswer, hiddenValue);
                 System.out.println("Let's try again, " + userName);
                 break;
             }

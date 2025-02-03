@@ -13,6 +13,7 @@ public class App {
         String even = "2";
         String calc = "3";
         String gcd = "4";
+        String progression = "5";
 
         Engine.showChoice();
         String choice = scanner.next();
@@ -36,6 +37,10 @@ public class App {
 
         if(choice.equals(gcd)) {
             GCD.findGCD();
+        }
+
+        if(choice.equals((progression))) {
+            Progression.getProgression();
         }
 
         scanner.close();

@@ -10,6 +10,7 @@ public class Engine {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
     }
 
     public static void showFail(String userAnswer, String correctAnswer) {
