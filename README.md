@@ -6,3 +6,5 @@
 [Game Calc](https://asciinema.org/a/StIkDo52SWoUKqyqdhmFkH46q)
 
 [Game GCD](https://asciinema.org/a/KQY7hISXRHbQl8XB5PRZf5Om6)
+
+[Game Progression](https://asciinema.org/a/pyWcAxTePCoYbmYt8s9sYHghb)
