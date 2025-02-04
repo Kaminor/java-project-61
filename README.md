@@ -8,3 +8,5 @@
 [Game GCD](https://asciinema.org/a/KQY7hISXRHbQl8XB5PRZf5Om6)
 
 [Game Progression](https://asciinema.org/a/pyWcAxTePCoYbmYt8s9sYHghb)
+
+[Game Prime](https://asciinema.org/a/mptibDdYqTo9jcTsdkseFq8EX)
