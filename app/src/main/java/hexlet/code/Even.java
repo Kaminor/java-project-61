@@ -31,7 +31,7 @@ public class Even {
                 countOfWinners++;
             } else {
                 Engine.showFail(isEvenAnswer, correctAnswer);
-                System.out.println("Let's try again, " + userName);
+                System.out.println("Let's try again, " + userName + "!");
                 break;
             }
 

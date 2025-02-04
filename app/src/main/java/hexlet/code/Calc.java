@@ -49,7 +49,7 @@ public class Calc {
                 countOfWinners++;
             } else {
                 Engine.showFail(calcResultAnswer, result);
-                System.out.println("Let's try again, " + userName);
+                System.out.println("Let's try again, " + userName + "!");
                 break;
             }
 

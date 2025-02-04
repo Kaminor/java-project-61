@@ -48,7 +48,7 @@ public class Progression {
                 countOfWinners++;
             } else {
                 Engine.showFail(calcResultAnswer, hiddenValue);
-                System.out.println("Let's try again, " + userName);
+                System.out.println("Let's try again, " + userName + "!");
                 break;
             }
 

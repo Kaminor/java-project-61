@@ -38,7 +38,7 @@ public class GCD {
                 countOfWinners++;
             } else {
                 Engine.showFail(calcResultAnswer, gcdNumber);
-                System.out.println("Let's try again, " + userName);
+                System.out.println("Let's try again, " + userName + "!");
                 break;
             }
 

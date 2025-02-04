@@ -40,7 +40,7 @@ public class Prime {
                 countOfWinners++;
             } else {
                 Engine.showFail(answer, correctAnswer);
-                System.out.println("Let's try again, " + userName);
+                System.out.println("Let's try again, " + userName +"!");
                 break;
             }
 
