@@ -14,6 +14,7 @@ public class App {
         String calc = "3";
         String gcd = "4";
         String progression = "5";
+        String prime = "6";
 
         Engine.showChoice();
         String choice = scanner.next();
@@ -35,12 +36,16 @@ public class App {
             Calc.count();
         }
 
-        if(choice.equals(gcd)) {
+        if (choice.equals(gcd)) {
             GCD.findGCD();
         }
 
-        if(choice.equals((progression))) {
+        if (choice.equals((progression))) {
             Progression.getProgression();
+        }
+
+        if (choice.equals(prime)) {
+            Prime.getPrime();
         }
 
         scanner.close();
