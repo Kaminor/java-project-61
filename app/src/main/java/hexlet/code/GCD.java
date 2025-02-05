@@ -12,14 +12,17 @@ public class GCD {
         System.out.println("May I have your name? ");
         String userName = scanner.next();
         Cli.greeting(userName);
-        System.out.println("");
+        System.out.println();
         System.out.println("Find the greatest common divisor of given numbers.");
 
         int countOfWinners = 0;
+        int attempts = 3;
+        int greatestNumberMaxValue = 300;
+        int smallestNumberMaxValue = 20;
 
-        for (var i = 0; i < 3; i++) {
-            int randomNumberOne = random.nextInt(300) + 1;
-            int randomNumberTwo = random.nextInt(20) + 1;
+        for (var i = 0; i < attempts; i++) {
+            int randomNumberOne = random.nextInt(greatestNumberMaxValue) + 1;
+            int randomNumberTwo = random.nextInt(smallestNumberMaxValue) + 1;
             int gcdNumber = 0;
 
             for (var j = 1; j <= Math.max(randomNumberOne, randomNumberTwo) / 2; j++) {
@@ -42,7 +45,7 @@ public class GCD {
                 break;
             }
 
-            if (countOfWinners == 3) {
+            if (countOfWinners == attempts) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

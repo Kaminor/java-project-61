@@ -16,17 +16,23 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         int countOfWinners = 0;
+        int attempts = 3;
+        int maxStartValue = 5;
+        int maxStepValue = 8;
+        int minStepValue = 3;
+        int progressionLength = 10;
+        int hiddenIndexValue = 9;
 
-        for (var i = 0; i < 3; i++) {
-            int start = random.nextInt(5);
-            int step = random.nextInt(8) + 3;
-            int[] progression = new int[10];
+        for (var i = 0; i < attempts; i++) {
+            int start = random.nextInt(maxStartValue);
+            int step = random.nextInt(maxStepValue) + minStepValue;
+            int[] progression = new int[progressionLength];
 
             for (var j = 0; j < progression.length; j++) {
                 progression[j] = start + j * step;
             }
 
-            int hiddenIndex = random.nextInt(9);
+            int hiddenIndex = random.nextInt(hiddenIndexValue);
             int hiddenValue = progression[hiddenIndex];
             System.out.print("Question: ");
 
@@ -52,7 +58,7 @@ public class Progression {
                 break;
             }
 
-            if (countOfWinners == 3) {
+            if (countOfWinners == attempts) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

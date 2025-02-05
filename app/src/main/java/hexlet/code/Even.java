@@ -17,9 +17,11 @@ public class Even {
         System.out.println("");
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int countOfWinners = 0;
+        int attempts = 3;
+        int maxPossibleValue = 100;
 
-        for (var i = 0; i < 3; i++) {
-            int randomNumber = random.nextInt(100) + 1;
+        for (var i = 0; i < attempts; i++) {
+            int randomNumber = random.nextInt(maxPossibleValue) + 1;
             System.out.println("Question: " + randomNumber);
             System.out.println("Your answer: ");
 
@@ -35,7 +37,7 @@ public class Even {
                 break;
             }
 
-            if (countOfWinners == 3) {
+            if (countOfWinners == attempts) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

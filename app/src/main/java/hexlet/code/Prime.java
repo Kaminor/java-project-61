@@ -16,9 +16,11 @@ public class Prime {
         System.out.println();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int countOfWinners = 0;
+        int attempts = 3;
+        int randomNumberMaxValue = 30;
 
-        for (var i = 0; i < 3; i++) {
-            int randomNumber = random.nextInt(30) + 2;
+        for (var i = 0; i < attempts; i++) {
+            int randomNumber = random.nextInt(randomNumberMaxValue) + 2;
 
             String correctAnswer = "yes";
 
@@ -40,11 +42,11 @@ public class Prime {
                 countOfWinners++;
             } else {
                 Engine.showFail(answer, correctAnswer);
-                System.out.println("Let's try again, " + userName +"!");
+                System.out.println("Let's try again, " + userName + "!");
                 break;
             }
 
-            if (countOfWinners == 3) {
+            if (countOfWinners == attempts) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

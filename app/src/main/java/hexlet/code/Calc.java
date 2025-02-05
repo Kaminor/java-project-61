@@ -16,10 +16,12 @@ public class Calc {
         System.out.println("What is the result of the expression?");
 
         int countOfWinners = 0;
+        int attempts = 3;
+        int maxValueOfRandomNumber = 50;
 
-        for (var i = 0; i < 3; i++) {
-            int randomNumberOne = random.nextInt(50) + 1;
-            int randomNumberTwo = random.nextInt(50) + 1;
+        for (var i = 0; i < attempts; i++) {
+            int randomNumberOne = random.nextInt(maxValueOfRandomNumber) + 1;
+            int randomNumberTwo = random.nextInt(maxValueOfRandomNumber) + 1;
             String[] operations = {"+", "-", "*"};
             int operationIndex = random.nextInt(operations.length);
             String operationSymbol = operations[operationIndex];
@@ -53,7 +55,7 @@ public class Calc {
                 break;
             }
 
-            if (countOfWinners == 3) {
+            if (countOfWinners == attempts) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }
