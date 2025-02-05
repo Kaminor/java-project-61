@@ -14,11 +14,11 @@ public class Even {
         System.out.println("May I have your name? ");
         String userName = scanner.next();
         Cli.greeting(userName);
-        System.out.println("");
+        System.out.println();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int countOfWinners = 0;
-        int attempts = 3;
-        int maxPossibleValue = 100;
+        final int attempts = 3;
+        final int maxPossibleValue = 100;
 
         for (var i = 0; i < attempts; i++) {
             int randomNumber = random.nextInt(maxPossibleValue) + 1;

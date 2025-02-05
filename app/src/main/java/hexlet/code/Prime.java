@@ -16,8 +16,8 @@ public class Prime {
         System.out.println();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int countOfWinners = 0;
-        int attempts = 3;
-        int randomNumberMaxValue = 30;
+        final int attempts = 3;
+        final int randomNumberMaxValue = 30;
 
         for (var i = 0; i < attempts; i++) {
             int randomNumber = random.nextInt(randomNumberMaxValue) + 2;

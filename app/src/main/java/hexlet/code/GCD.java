@@ -16,9 +16,9 @@ public class GCD {
         System.out.println("Find the greatest common divisor of given numbers.");
 
         int countOfWinners = 0;
-        int attempts = 3;
-        int greatestNumberMaxValue = 300;
-        int smallestNumberMaxValue = 20;
+        final int attempts = 3;
+        final int greatestNumberMaxValue = 300;
+        final int smallestNumberMaxValue = 20;
 
         for (var i = 0; i < attempts; i++) {
             int randomNumberOne = random.nextInt(greatestNumberMaxValue) + 1;

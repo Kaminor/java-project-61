@@ -16,12 +16,12 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         int countOfWinners = 0;
-        int attempts = 3;
-        int maxStartValue = 5;
-        int maxStepValue = 8;
-        int minStepValue = 3;
-        int progressionLength = 10;
-        int hiddenIndexValue = 9;
+        final int attempts = 3;
+        final int maxStartValue = 5;
+        final int maxStepValue = 8;
+        final int minStepValue = 3;
+        final int progressionLength = 10;
+        final int hiddenIndexValue = 9;
 
         for (var i = 0; i < attempts; i++) {
             int start = random.nextInt(maxStartValue);

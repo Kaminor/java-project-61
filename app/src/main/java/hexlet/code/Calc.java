@@ -16,8 +16,8 @@ public class Calc {
         System.out.println("What is the result of the expression?");
 
         int countOfWinners = 0;
-        int attempts = 3;
-        int maxValueOfRandomNumber = 50;
+        final int attempts = 3;
+        final int maxValueOfRandomNumber = 50;
 
         for (var i = 0; i < attempts; i++) {
             int randomNumberOne = random.nextInt(maxValueOfRandomNumber) + 1;
