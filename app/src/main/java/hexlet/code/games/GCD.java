@@ -5,10 +5,6 @@ import  java.util.Scanner;
 import  java.util.Random;
 
 public class GCD {
-    static final int GREATEST_NUMBER_MAX_VALUE = 300;
-    static final int SMALLEST_NUMBER_MAX_VALUE = 20;
-
-
     static int calculateGCD(int randomNumberOne, int randomNumberTwo) {
         int gcdNumber = 0;
 
@@ -35,10 +31,12 @@ public class GCD {
         int countOfWins = 0;
         final int attempts = 3;
         Random random = new Random();
+        final int smallestNumberMaxValue = 20;
+        final int greatestNumberMaxValue = 300;
 
         for (var i = 0; i < attempts; i++) {
-            int randomNumberOne = random.nextInt(GREATEST_NUMBER_MAX_VALUE) + 1;
-            int randomNumberTwo = random.nextInt(SMALLEST_NUMBER_MAX_VALUE) + 1;
+            int randomNumberOne = random.nextInt(smallestNumberMaxValue) + 1;
+            int randomNumberTwo = random.nextInt(greatestNumberMaxValue) + 1;
             calculateGCD(randomNumberOne, randomNumberTwo);
 
             System.out.println("Question: " + randomNumberOne + " " + randomNumberTwo);
