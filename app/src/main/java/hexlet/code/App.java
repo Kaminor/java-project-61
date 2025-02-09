@@ -1,4 +1,6 @@
 package hexlet.code;
+import hexlet.code.games.*;
+
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or

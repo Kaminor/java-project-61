@@ -1,9 +1,13 @@
-package hexlet.code;
+package hexlet.code.games;
+import hexlet.code.Cli;
+import hexlet.code.Engine;
+
 import  java.util.Random;
 import  java.util.Scanner;
 
-public class Prime {
+public class Even {
     public static void startPlay() {
+
         Scanner scanner = new Scanner(System.in);
         String greetingMessage = "Welcome to the Brain Games!";
         Random random = new Random();
@@ -14,34 +18,24 @@ public class Prime {
         String userName = scanner.next();
         Cli.greeting(userName);
         System.out.println();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int countOfWinners = 0;
         final int attempts = 3;
-        final int randomNumberMaxValue = 30;
+        final int maxPossibleValue = 100;
 
         for (var i = 0; i < attempts; i++) {
-            int randomNumber = random.nextInt(randomNumberMaxValue) + 2;
-
-            String correctAnswer = "yes";
-
-            for (var j = 2; j < randomNumber; j++) {
-                if (randomNumber % j == 0) {
-                    correctAnswer = "no";
-                    break;
-                }
-            }
-
-
+            int randomNumber = random.nextInt(maxPossibleValue) + 1;
             System.out.println("Question: " + randomNumber);
             System.out.println("Your answer: ");
 
-            String answer = scanner.next();
+            String isEvenAnswer = scanner.next();
+            String correctAnswer = randomNumber % 2 == 0 ? "yes" : "no";
 
-            if (answer.equals(correctAnswer)) {
+            if (isEvenAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
                 countOfWinners++;
             } else {
-                Engine.showFail(answer, correctAnswer);
+                Engine.showFail(isEvenAnswer, correctAnswer);
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
