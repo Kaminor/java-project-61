@@ -3,8 +3,8 @@ import  java.util.Scanner;
 import  java.util.Random;
 
 public class GCD {
-    static final int greatestNumberMaxValue = 300;
-    static final int smallestNumberMaxValue = 20;
+    static final int GREATEST_NUMBER_MAX_VALUE = 300;
+    static final int SMALLEST_NUMBER_MAX_VALUE = 20;
     static Random random = new Random();
 
 
@@ -35,8 +35,8 @@ public class GCD {
         final int attempts = 3;
 
         for (var i = 0; i < attempts; i++) {
-            int randomNumberOne = random.nextInt(greatestNumberMaxValue) + 1;
-            int randomNumberTwo = random.nextInt(smallestNumberMaxValue) + 1;
+            int randomNumberOne = random.nextInt(GREATEST_NUMBER_MAX_VALUE) + 1;
+            int randomNumberTwo = random.nextInt(SMALLEST_NUMBER_MAX_VALUE) + 1;
             calculateGCD(randomNumberOne, randomNumberTwo);
 
             System.out.println("Question: " + randomNumberOne + " " + randomNumberTwo);
