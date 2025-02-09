@@ -28,43 +28,35 @@ public class App {
         // to see how IntelliJ IDEA suggests fixing it.
         Scanner scanner = new Scanner(System.in);
         String greetingMessage = "Welcome to the Brain Games!";
-        String greet = "1";
-        String even = "2";
-        String calc = "3";
-        String gcd = "4";
-        String progression = "5";
-        String prime = "6";
 
         showChoice();
         String choice = scanner.next();
         System.out.println("Your choice: " + choice);
 
-        if (choice.equals(greet)) {
-            System.out.println(greetingMessage);
-            System.out.println("May I have your name? ");
-            String userName = scanner.next();
-            Cli.greeting(userName);
-        }
-
-
-        if (choice.equals(even)) {
-            Even.startPlay();
-        }
-
-        if (choice.equals(calc)) {
-            Calc.startPlay();
-        }
-
-        if (choice.equals(gcd)) {
-            GCD.startPlay();
-        }
-
-        if (choice.equals((progression))) {
-            Progression.startPlay();
-        }
-
-        if (choice.equals(prime)) {
-            Prime.startPlay();
+        switch (choice) {
+            case "1":
+                System.out.println(greetingMessage);
+                System.out.println("May I have your name? ");
+                String userName = scanner.next();
+                Cli.greeting(userName);
+                break;
+            case "2":
+                Even.startPlay();
+                break;
+            case "3":
+                Calc.startPlay();
+                break;
+            case "4":
+                GCD.startPlay();
+                break;
+            case "5":
+                Progression.startPlay();
+                break;
+            case "6":
+                Prime.startPlay();
+                break;
+            default:
+                break;
         }
 
         scanner.close();
