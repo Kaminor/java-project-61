@@ -3,7 +3,7 @@ import  java.util.Random;
 import  java.util.Scanner;
 
 public class Prime {
-    public static void getPrime() {
+    public static void startPlay() {
         Scanner scanner = new Scanner(System.in);
         String greetingMessage = "Welcome to the Brain Games!";
         Random random = new Random();

@@ -3,7 +3,7 @@ import  java.util.Random;
 import  java.util.Scanner;
 
 public class Even {
-    public static void gamingEven() {
+    public static void startPlay() {
 
         Scanner scanner = new Scanner(System.in);
         String greetingMessage = "Welcome to the Brain Games!";

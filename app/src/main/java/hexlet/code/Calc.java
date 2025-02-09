@@ -3,7 +3,7 @@ import  java.util.Random;
 import  java.util.Scanner;
 
 public class Calc {
-    public static void count() {
+    public static void startPlay() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         String greetingMessage = "Welcome to the Brain Games!";

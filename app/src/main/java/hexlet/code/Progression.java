@@ -3,7 +3,7 @@ import  java.util.Scanner;
 import  java.util.Random;
 
 public class Progression {
-    public static void getProgression() {
+    public static void startPlay() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         String greetingMessage = "Welcome to the Brain Games!";

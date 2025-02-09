@@ -4,6 +4,19 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class App {
+    public static void showChoice() {
+
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.println("1 - Greet");
+        System.out.println("2 - Even");
+        System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
+        System.out.println("0 - Exit");
+    }
+
+
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
@@ -16,7 +29,7 @@ public class App {
         String progression = "5";
         String prime = "6";
 
-        Engine.showChoice();
+        showChoice();
         String choice = scanner.next();
         System.out.println("Your choice: " + choice);
 
@@ -29,23 +42,23 @@ public class App {
 
 
         if (choice.equals(even)) {
-            Even.gamingEven();
+            Even.startPlay();
         }
 
         if (choice.equals(calc)) {
-            Calc.count();
+            Calc.startPlay();
         }
 
         if (choice.equals(gcd)) {
-            GCD.findGCD();
+            GCD.startPlay();
         }
 
         if (choice.equals((progression))) {
-            Progression.getProgression();
+            Progression.startPlay();
         }
 
         if (choice.equals(prime)) {
-            Prime.getPrime();
+            Prime.startPlay();
         }
 
         scanner.close();
