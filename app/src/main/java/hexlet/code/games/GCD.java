@@ -8,7 +8,15 @@ import  java.util.Random;
 public class GCD {
     static final int GREATEST_NUMBER_MAX_VALUE = 300;
     static final int SMALLEST_NUMBER_MAX_VALUE = 20;
-    static Random random = new Random();
+    private static Random random = new Random();
+
+    public Random getRandom() {
+        return random;
+    }
+
+    public void setRandom(Random random) {
+        GCD.random = random;
+    }
 
 
     static int calculateGCD(int randomNumberOne, int randomNumberTwo) {
