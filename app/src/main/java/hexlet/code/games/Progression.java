@@ -18,7 +18,7 @@ public class Progression {
         System.out.println("");
         System.out.println("What number is missing in the progression?");
 
-        int countOfWinners = 0;
+        int countOfWins = 0;
         final int attempts = 3;
         final int maxStartValue = 5;
         final int maxStepValue = 8;
@@ -54,14 +54,14 @@ public class Progression {
 
             if (String.valueOf(hiddenValue).equals(calcResultAnswer)) {
                 System.out.println("Correct!");
-                countOfWinners++;
+                countOfWins++;
             } else {
                 Engine.showFail(calcResultAnswer, hiddenValue);
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
 
-            if (countOfWinners == attempts) {
+            if (countOfWins == attempts) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

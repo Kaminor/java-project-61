@@ -19,7 +19,7 @@ public class Even {
         Cli.greeting(userName);
         System.out.println();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        int countOfWinners = 0;
+        int countOfWins = 0;
         final int attempts = 3;
         final int maxPossibleValue = 100;
 
@@ -33,14 +33,14 @@ public class Even {
 
             if (isEvenAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
-                countOfWinners++;
+                countOfWins++;
             } else {
                 Engine.showFail(isEvenAnswer, correctAnswer);
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
 
-            if (countOfWinners == attempts) {
+            if (countOfWins == attempts) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

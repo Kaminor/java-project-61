@@ -32,7 +32,7 @@ public class GCD {
         System.out.println();
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        int countOfWinners = 0;
+        int countOfWins = 0;
         final int attempts = 3;
         Random random = new Random();
 
@@ -48,14 +48,14 @@ public class GCD {
 
             if (String.valueOf(calculateGCD(randomNumberOne, randomNumberTwo)).equals(calcResultAnswer)) {
                 System.out.println("Correct!");
-                countOfWinners++;
+                countOfWins++;
             } else {
                 Engine.showFail(calcResultAnswer, calculateGCD(randomNumberOne, randomNumberTwo));
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
 
-            if (countOfWinners == attempts) {
+            if (countOfWins == attempts) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

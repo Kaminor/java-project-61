@@ -18,7 +18,7 @@ public class Prime {
         Cli.greeting(userName);
         System.out.println();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        int countOfWinners = 0;
+        int countOfWins = 0;
         final int attempts = 3;
         final int randomNumberMaxValue = 30;
 
@@ -42,14 +42,14 @@ public class Prime {
 
             if (answer.equals(correctAnswer)) {
                 System.out.println("Correct!");
-                countOfWinners++;
+                countOfWins++;
             } else {
                 Engine.showFail(answer, correctAnswer);
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
 
-            if (countOfWinners == attempts) {
+            if (countOfWins == attempts) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

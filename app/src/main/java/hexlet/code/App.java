@@ -38,7 +38,7 @@ public class App {
                 System.out.println(greetingMessage);
                 System.out.println("May I have your name? ");
                 String userName = scanner.next();
-                Cli.greeting(userName);
+                System.out.print("Hello, " + userName + "!");
                 break;
             case "2":
                 Even.startPlay();

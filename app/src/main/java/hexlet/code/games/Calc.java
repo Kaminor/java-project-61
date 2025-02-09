@@ -18,7 +18,7 @@ public class Calc {
         System.out.println("");
         System.out.println("What is the result of the expression?");
 
-        int countOfWinners = 0;
+        int countOfWins = 0;
         final int attempts = 3;
         final int maxValueOfRandomNumber = 50;
 
@@ -51,14 +51,14 @@ public class Calc {
 
             if (String.valueOf(result).equals(calcResultAnswer)) {
                 System.out.println("Correct!");
-                countOfWinners++;
+                countOfWins++;
             } else {
                 Engine.showFail(calcResultAnswer, result);
                 System.out.println("Let's try again, " + userName + "!");
                 break;
             }
 
-            if (countOfWinners == attempts) {
+            if (countOfWins == attempts) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }
