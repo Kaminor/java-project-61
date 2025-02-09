@@ -22,7 +22,7 @@ public class GCD {
 
         Engine.greeting();
         String userName = scanner.next();
-        Cli.greeting(userName);
+        Cli.greetUser(userName);
         System.out.println();
         System.out.println("Find the greatest common divisor of given numbers.");
 

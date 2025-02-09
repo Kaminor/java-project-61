@@ -14,7 +14,7 @@ public class Even {
 
         Engine.greeting();
         String userName = scanner.next();
-        Cli.greeting(userName);
+        Cli.greetUser(userName);
         System.out.println();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int countOfWins = 0;

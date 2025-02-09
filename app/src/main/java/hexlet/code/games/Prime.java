@@ -13,7 +13,7 @@ public class Prime {
 
         Engine.greeting();
         String userName = scanner.next();
-        Cli.greeting(userName);
+        Cli.greetUser(userName);
         System.out.println();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int countOfWins = 0;

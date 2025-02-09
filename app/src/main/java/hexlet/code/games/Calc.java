@@ -12,7 +12,7 @@ public class Calc {
 
         Engine.greeting();
         String userName = scanner.next();
-        Cli.greeting(userName);
+        Cli.greetUser(userName);
         System.out.println("");
         System.out.println("What is the result of the expression?");
 

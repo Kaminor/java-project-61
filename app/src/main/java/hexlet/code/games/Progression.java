@@ -12,7 +12,7 @@ public class Progression {
 
         Engine.greeting();
         String userName = scanner.next();
-        Cli.greeting(userName);
+        Cli.greetUser(userName);
         System.out.println("");
         System.out.println("What number is missing in the progression?");
 
