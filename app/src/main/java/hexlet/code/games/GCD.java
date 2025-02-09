@@ -1,22 +1,12 @@
 package hexlet.code.games;
 import hexlet.code.Cli;
 import hexlet.code.Engine;
-
 import  java.util.Scanner;
 import  java.util.Random;
 
 public class GCD {
     static final int GREATEST_NUMBER_MAX_VALUE = 300;
     static final int SMALLEST_NUMBER_MAX_VALUE = 20;
-    private static Random random = new Random();
-
-    public Random getRandom() {
-        return random;
-    }
-
-    public void setRandom(Random random) {
-        GCD.random = random;
-    }
 
 
     static int calculateGCD(int randomNumberOne, int randomNumberTwo) {
@@ -44,6 +34,7 @@ public class GCD {
 
         int countOfWinners = 0;
         final int attempts = 3;
+        Random random = new Random();
 
         for (var i = 0; i < attempts; i++) {
             int randomNumberOne = random.nextInt(GREATEST_NUMBER_MAX_VALUE) + 1;
