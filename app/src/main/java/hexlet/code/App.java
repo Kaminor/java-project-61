@@ -27,7 +27,6 @@ public class App {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         Scanner scanner = new Scanner(System.in);
-        String greetingMessage = "Welcome to the Brain Games!";
 
         showChoice();
         String choice = scanner.next();
@@ -35,8 +34,7 @@ public class App {
 
         switch (choice) {
             case "1":
-                System.out.println(greetingMessage);
-                System.out.println("May I have your name? ");
+                Engine.greeting();
                 String userName = scanner.next();
                 System.out.print("Hello, " + userName + "!");
                 break;

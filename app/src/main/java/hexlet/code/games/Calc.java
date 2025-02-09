@@ -9,10 +9,8 @@ public class Calc {
     public static void startPlay() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        String greetingMessage = "Welcome to the Brain Games!";
 
-        System.out.println(greetingMessage);
-        System.out.println("May I have your name? ");
+        Engine.greeting();
         String userName = scanner.next();
         Cli.greeting(userName);
         System.out.println("");

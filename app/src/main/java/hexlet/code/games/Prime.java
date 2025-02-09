@@ -8,12 +8,10 @@ import  java.util.Scanner;
 public class Prime {
     public static void startPlay() {
         Scanner scanner = new Scanner(System.in);
-        String greetingMessage = "Welcome to the Brain Games!";
         Random random = new Random();
 
 
-        System.out.println(greetingMessage);
-        System.out.println("May I have your name? ");
+        Engine.greeting();
         String userName = scanner.next();
         Cli.greeting(userName);
         System.out.println();
