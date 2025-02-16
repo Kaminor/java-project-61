@@ -11,7 +11,6 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class App {
     public static void showChoice() {
-
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -22,7 +21,6 @@ public class App {
         System.out.println("0 - Exit");
     }
 
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -32,7 +30,7 @@ public class App {
 
         switch (choice) {
             case "1":
-                Engine.greeting();
+                Cli.greet();
                 String userName = scanner.next();
                 System.out.print("Hello, " + userName + "!");
                 break;
