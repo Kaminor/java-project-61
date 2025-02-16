@@ -7,12 +7,10 @@ import  java.util.Scanner;
 
 public class Even {
     public static void startPlay() {
-
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-
-        Engine.greeting();
+        Engine.greet();
         String userName = scanner.next();
         Cli.greetUser(userName);
         System.out.println();
@@ -23,24 +21,18 @@ public class Even {
 
         for (var i = 0; i < attempts; i++) {
             int randomNumber = random.nextInt(maxPossibleValue) + 1;
-            System.out.println("Question: " + randomNumber);
+            Engine.askQuestionPrimeOrEven(randomNumber);
             System.out.println("Your answer: ");
 
             String isEvenAnswer = scanner.next();
             String correctAnswer = randomNumber % 2 == 0 ? "yes" : "no";
 
-            if (isEvenAnswer.equals(correctAnswer)) {
-                System.out.println("Correct!");
-                countOfWins++;
-            } else {
-                Engine.showFail(isEvenAnswer, correctAnswer);
-                System.out.println("Let's try again, " + userName + "!");
+            if (!Engine.check(correctAnswer, isEvenAnswer, userName)) {
                 break;
             }
+            countOfWins++;
 
-            if (countOfWins == attempts) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            Engine.countWins(countOfWins, attempts, userName);
         }
     }
 }

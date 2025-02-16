@@ -1,7 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Cli;
 import hexlet.code.Engine;
-
 import  java.util.Scanner;
 import  java.util.Random;
 
@@ -10,7 +9,7 @@ public class Progression {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        Engine.greeting();
+        Engine.greet();
         String userName = scanner.next();
         Cli.greetUser(userName);
         System.out.println("");
@@ -35,33 +34,18 @@ public class Progression {
 
             int hiddenIndex = random.nextInt(hiddenIndexValue);
             int hiddenValue = progression[hiddenIndex];
-            System.out.print("Question: ");
 
-            for (int num : progression) {
-                if (num == hiddenValue) {
-                    System.out.print(".. ");
-                } else {
-                    System.out.print(num + " ");
-                }
-            }
-
+            Engine.askQuestionProgression(progression, hiddenValue);
             System.out.println();
             System.out.println("Your answer: ");
 
             String calcResultAnswer = scanner.next();
-
-            if (String.valueOf(hiddenValue).equals(calcResultAnswer)) {
-                System.out.println("Correct!");
-                countOfWins++;
-            } else {
-                Engine.showFail(calcResultAnswer, hiddenValue);
-                System.out.println("Let's try again, " + userName + "!");
+            if (!Engine.check(hiddenValue, calcResultAnswer, userName)) {
                 break;
             }
+            countOfWins++;
 
-            if (countOfWins == attempts) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            Engine.countWins(countOfWins, attempts, userName);
         }
     }
 }

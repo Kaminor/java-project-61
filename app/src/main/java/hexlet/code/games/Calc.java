@@ -1,7 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Cli;
 import hexlet.code.Engine;
-
 import  java.util.Random;
 import  java.util.Scanner;
 
@@ -10,7 +9,7 @@ public class Calc {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        Engine.greeting();
+        Engine.greet();
         String userName = scanner.next();
         Cli.greetUser(userName);
         System.out.println("");
@@ -42,23 +41,16 @@ public class Calc {
                     result = 0;
             }
 
-            System.out.println("Question: " + randomNumberOne + " " + operationSymbol + " " + randomNumberTwo);
+            Engine.askQuestionCalc(randomNumberOne, operationSymbol, randomNumberTwo);
             System.out.println("Your answer: ");
 
             String calcResultAnswer = scanner.next();
-
-            if (String.valueOf(result).equals(calcResultAnswer)) {
-                System.out.println("Correct!");
-                countOfWins++;
-            } else {
-                Engine.showFail(calcResultAnswer, result);
-                System.out.println("Let's try again, " + userName + "!");
+            if (!Engine.check(result, calcResultAnswer, userName)) {
                 break;
             }
+            countOfWins++;
 
-            if (countOfWins == attempts) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            Engine.countWins(countOfWins, attempts, userName);
         }
     }
 }
