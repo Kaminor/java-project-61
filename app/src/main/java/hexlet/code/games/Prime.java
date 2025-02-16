@@ -1,7 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Cli;
 import hexlet.code.Engine;
-
 import  java.util.Random;
 import  java.util.Scanner;
 
@@ -10,8 +9,7 @@ public class Prime {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-
-        Engine.greeting();
+        Engine.greet();
         String userName = scanner.next();
         Cli.greetUser(userName);
         System.out.println();
@@ -25,31 +23,22 @@ public class Prime {
 
             String correctAnswer = "yes";
 
-            for (var j = 2; j < randomNumber; j++) {
+            for (var j = 2; j * j <= randomNumber; j++) {
                 if (randomNumber % j == 0) {
                     correctAnswer = "no";
                     break;
                 }
             }
 
-
-            System.out.println("Question: " + randomNumber);
+            Engine.askQuestionPrimeOrEven(randomNumber);
             System.out.println("Your answer: ");
-
             String answer = scanner.next();
-
-            if (answer.equals(correctAnswer)) {
-                System.out.println("Correct!");
-                countOfWins++;
-            } else {
-                Engine.showFail(answer, correctAnswer);
-                System.out.println("Let's try again, " + userName + "!");
+            if (!Engine.check(correctAnswer, answer, userName)) {
                 break;
             }
+            countOfWins++;
 
-            if (countOfWins == attempts) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            Engine.countWins(countOfWins, attempts, userName);
         }
     }
 }
