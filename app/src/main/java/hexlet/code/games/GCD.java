@@ -6,21 +6,17 @@ import  java.util.Random;
 
 public class GCD {
     static int calculateGCD(int randomNumberOne, int randomNumberTwo) {
-        int gcdNumber = 0;
-
-        for (var j = 1; j <= Math.max(randomNumberOne, randomNumberTwo); j++) {
-            if (randomNumberOne % j == 0 && randomNumberTwo % j == 0) {
-                gcdNumber = j;
-            }
+        if (randomNumberTwo == 0) {
+            return randomNumberOne;
+        } else {
+            return calculateGCD(randomNumberTwo, randomNumberOne % randomNumberTwo);
         }
-        return gcdNumber;
     }
-
 
     public static void startPlay() {
         Scanner scanner = new Scanner(System.in);
 
-        Engine.greeting();
+        Engine.greet();
         String userName = scanner.next();
         Cli.greetUser(userName);
         System.out.println();
@@ -35,25 +31,15 @@ public class GCD {
         for (var i = 0; i < attempts; i++) {
             int randomNumberOne = random.nextInt(smallestNumberMaxValue) + 1;
             int randomNumberTwo = random.nextInt(greatestNumberMaxValue) + 1;
-            calculateGCD(randomNumberOne, randomNumberTwo);
 
-            System.out.println("Question: " + randomNumberOne + " " + randomNumberTwo);
+            Engine.askQuestionGCD(randomNumberOne, randomNumberTwo);
             System.out.println("Your answer: ");
-
             String calcResultAnswer = scanner.next();
-
-            if (String.valueOf(calculateGCD(randomNumberOne, randomNumberTwo)).equals(calcResultAnswer)) {
-                System.out.println("Correct!");
-                countOfWins++;
-            } else {
-                Engine.showFail(calcResultAnswer, calculateGCD(randomNumberOne, randomNumberTwo));
-                System.out.println("Let's try again, " + userName + "!");
+            if (!Engine.check(calculateGCD(randomNumberOne, randomNumberTwo), calcResultAnswer, userName)) {
                 break;
             }
-
-            if (countOfWins == attempts) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            countOfWins++;
+            Engine.countWins(countOfWins, attempts, userName);
         }
     }
 }
