@@ -40,11 +40,12 @@ public class Progression {
             System.out.println("Your answer: ");
 
             String calcResultAnswer = scanner.next();
+
             if (!Engine.check(hiddenValue, calcResultAnswer, userName)) {
                 break;
             }
-            countOfWins++;
 
+            countOfWins++;
             Engine.countWins(countOfWins, attempts, userName);
         }
     }

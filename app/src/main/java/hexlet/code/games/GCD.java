@@ -35,9 +35,11 @@ public class GCD {
             Engine.askQuestionGCD(randomNumberOne, randomNumberTwo);
             System.out.println("Your answer: ");
             String calcResultAnswer = scanner.next();
+
             if (!Engine.check(calculateGCD(randomNumberOne, randomNumberTwo), calcResultAnswer, userName)) {
                 break;
             }
+
             countOfWins++;
             Engine.countWins(countOfWins, attempts, userName);
         }

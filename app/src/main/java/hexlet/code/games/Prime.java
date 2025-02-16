@@ -33,11 +33,12 @@ public class Prime {
             Engine.askQuestionPrimeOrEven(randomNumber);
             System.out.println("Your answer: ");
             String answer = scanner.next();
+
             if (!Engine.check(correctAnswer, answer, userName)) {
                 break;
             }
-            countOfWins++;
 
+            countOfWins++;
             Engine.countWins(countOfWins, attempts, userName);
         }
     }
