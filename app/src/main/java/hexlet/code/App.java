@@ -4,7 +4,6 @@ import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
-import java.util.Scanner;
 
 public class App {
     public static void showChoice() {
@@ -19,17 +18,11 @@ public class App {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        showChoice();
-        String choice = scanner.next();
-        System.out.println("Your choice: " + choice);
+        String choice = Cli.chooseGame();
 
         switch (choice) {
             case "1":
                 Cli.greet();
-                String userName = scanner.next();
-                System.out.print("Hello, " + userName + "!");
                 break;
             case "2":
                 Even.startPlay();
@@ -49,7 +42,5 @@ public class App {
             default:
                 break;
         }
-
-        scanner.close();
     }
 }
