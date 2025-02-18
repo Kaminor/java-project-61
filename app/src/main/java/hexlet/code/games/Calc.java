@@ -2,7 +2,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import  java.util.Random;
 
-public class Calc implements Game {
+public final class Calc implements Game {
     public String[] generate() {
         Random random = new Random();
         final int maxValueOfRandomNumber = 50;

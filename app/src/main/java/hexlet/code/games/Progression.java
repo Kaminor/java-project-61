@@ -2,7 +2,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import  java.util.Random;
 
-public class Progression implements Game {
+public final class Progression implements Game {
     public String[] generate() {
         Random random = new Random();
         final int maxStartValue = 5;
