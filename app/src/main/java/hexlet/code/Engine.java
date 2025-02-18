@@ -15,7 +15,8 @@ public class Engine {
     }
 
     public static int getAttempts() {
-        return 3;
+        final int attempts = 3;
+        return attempts;
     }
 
     public static String getUserAnswer() {
