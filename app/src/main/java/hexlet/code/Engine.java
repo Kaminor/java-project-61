@@ -1,4 +1,6 @@
 package hexlet.code;
+import  java.util.Scanner;
+import hexlet.code.games.Game;
 
 public class Engine {
     public static void greet() {
@@ -6,28 +8,20 @@ public class Engine {
         System.out.println("May I have your name? ");
     }
 
-    public static void askQuestionPrimeOrEven(int number) {
-        System.out.println("Question: " + number);
+    public static boolean roundIteration(String question, String answer, String userName) {
+        System.out.println("Question: " + question);
+        String userAnswer = getUserAnswer();
+        return check(answer, userAnswer, userName);
     }
 
-    public static void askQuestionProgression(int[] progression, int hiddenValue) {
-        System.out.print("Question: ");
-
-        for (int num : progression) {
-            if (num == hiddenValue) {
-                System.out.print(".. ");
-            } else {
-                System.out.print(num + " ");
-            }
-        }
+    public static int getAttempts() {
+        return 3;
     }
 
-    public static void askQuestionGCD(int numberOne, int numberTwo) {
-        System.out.println("Question: " + numberOne + " " + numberTwo);
-    }
-
-    public static void askQuestionCalc(int numberOne, String operationSymbol, int numberTwo) {
-        System.out.println("Question: " + numberOne + " " + operationSymbol + " " + numberTwo);
+    public static String getUserAnswer() {
+        System.out.println("Your answer: ");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.next();
     }
 
     public static boolean check(String correctAnswer, String userAnswer, String userName) {
@@ -41,10 +35,6 @@ public class Engine {
         }
     }
 
-    public static boolean check(int correctAnswer, String userAnswer, String userName) {
-        return check(String.valueOf(correctAnswer), userAnswer, userName);
-    }
-
     public static void showFail(String userAnswer, String correctAnswer) {
         System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
                 + "'" + correctAnswer + "'");
@@ -53,6 +43,28 @@ public class Engine {
     public static void countWins(int countOfWins, int attempts, String userName) {
         if (countOfWins == attempts) {
             System.out.println("Congratulations, " + userName + "!");
+        }
+    }
+
+    public static void play(String description, Game game) {
+        Scanner scanner = new Scanner(System.in);
+
+        greet();
+        String userName = scanner.next();
+        Cli.greetUser(userName);
+        System.out.println();
+        System.out.println(description);
+
+        int countOfWins = 0;
+        for (var i = 0; i < getAttempts(); i++) {
+            String[] data = game.generate();
+            if (!roundIteration(data[0], data[1], userName)) {
+                break;
+            } else {
+                countOfWins++;
+            }
+
+            countWins(countOfWins, getAttempts(), userName);
         }
     }
 }
