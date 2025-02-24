@@ -10,10 +10,10 @@ public class Engine {
         return userName;
     }
 
-    public static boolean roundIteration(String question, String answer, String userName) {
+    public static boolean runIteration(String question, String answer, String userName) {
         System.out.println("Question: " + question);
         String userAnswer = getUserAnswer();
-        return check(answer, userAnswer, userName);
+        return isCorrect(answer, userAnswer, userName);
     }
 
     public static int getAttempts() {
@@ -27,45 +27,39 @@ public class Engine {
         return scanner.next();
     }
 
-    public static boolean check(String correctAnswer, String userAnswer, String userName) {
+    public static boolean isCorrect(String correctAnswer, String userAnswer, String userName) {
         if (userAnswer.equals(correctAnswer)) {
             System.out.println("Correct!");
             return true;
         } else {
-            Engine.showFail(userAnswer, correctAnswer);
+            System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
+                    + "'" + correctAnswer + "'");
             System.out.println("Let's try again, " + userName + "!");
             return false;
         }
     }
 
-    public static void showFail(String userAnswer, String correctAnswer) {
-        System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
-                + "'" + correctAnswer + "'");
-    }
-
-    public static void countWins(int countOfWins, int attempts, String userName) {
-        if (countOfWins == attempts) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
-    }
-
-    public static void play(String description, Game game) {
-        String userName = Engine.getUserName();
-        System.out.println(description);
-
+    public static void play(Game game) {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name? ");
+        String userName = getUserName();
+        game.getDescription();
         int countOfWins = 0;
 
         for (var i = 0; i < getAttempts(); i++) {
-            game.generate();
-            String question = game.getQuestion();
-            String answer = game.getAnswer();
-            if (!roundIteration(question, answer, userName)) {
+            var data = game.generate();
+            var question = data[0];
+            var answer = data[1];
+
+            if (!runIteration(question, answer, userName)) {
                 break;
             } else {
                 countOfWins++;
             }
 
-            countWins(countOfWins, getAttempts(), userName);
+            if (countOfWins == getAttempts()) {
+                System.out.println("Congratulations, " + userName + "!");
+            }
         }
     }
 }
