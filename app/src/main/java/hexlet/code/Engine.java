@@ -12,19 +12,15 @@ public class Engine {
 
     public static boolean runIteration(String question, String answer, String userName) {
         System.out.println("Question: " + question);
-        String userAnswer = getUserAnswer();
+        System.out.println("Your answer: ");
+        Scanner scanner = new Scanner(System.in);
+        String userAnswer = scanner.next();
         return isCorrect(answer, userAnswer, userName);
     }
 
     public static int getAttempts() {
         final int attempts = 3;
         return attempts;
-    }
-
-    public static String getUserAnswer() {
-        System.out.println("Your answer: ");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.next();
     }
 
     public static boolean isCorrect(String correctAnswer, String userAnswer, String userName) {
