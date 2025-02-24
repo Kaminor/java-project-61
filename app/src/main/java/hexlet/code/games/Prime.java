@@ -3,36 +3,28 @@ import hexlet.code.Engine;
 import  java.util.Random;
 
 public final class Prime implements Game {
-    private String question;
-    private String answer;
-
-    public void generate() {
+    public String[] generate() {
         Random random = new Random();
         final int randomNumberMaxValue = 30;
-        int questionBuild = random.nextInt(randomNumberMaxValue) + 2;
+        int question = random.nextInt(randomNumberMaxValue) + 2;
         String result = "yes";
 
-        for (var j = 2; j * j <= questionBuild; j++) {
-            if (questionBuild % j == 0) {
+        for (var j = 2; j * j <= question; j++) {
+            if (question % j == 0) {
                 result = "no";
                 break;
             }
         }
 
-        question = String.valueOf(questionBuild);
-        answer = result;
+
+        return new String[]{String.valueOf(question), result};
     }
 
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
+    public void getDescription() {
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 
     public static void startPlay() {
-        String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        Engine.play(description, new Prime());
+        Engine.play(new Prime());
     }
 }

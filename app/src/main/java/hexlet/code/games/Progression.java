@@ -3,10 +3,7 @@ import hexlet.code.Engine;
 import  java.util.Random;
 
 public final class Progression implements Game {
-    private String question;
-    private String answer;
-
-    public void generate() {
+    public String[] generate() {
         Random random = new Random();
         final int maxStartValue = 5;
         final int maxStepValue = 8;
@@ -24,30 +21,24 @@ public final class Progression implements Game {
 
         int hiddenIndex = random.nextInt(hiddenIndexValue);
         int result = progression[hiddenIndex];
-        String questionBuild = "";
+        String question = "";
 
         for (int num : progression) {
             if (num == result) {
-                questionBuild += ".. ";
+                question += ".. ";
             } else {
-                questionBuild += num + " ";
+                question += num + " ";
             }
         }
 
-        question = questionBuild;
-        answer = String.valueOf(result);
+        return new String[]{question, String.valueOf(result)};
     }
 
-    public String getQuestion() {
-        return question;
-    }
-
-    public String getAnswer() {
-        return answer;
+    public void getDescription() {
+        System.out.println("What number is missing in the progression?");
     }
 
     public static void startPlay() {
-        String description = "What number is missing in the progression?";
-        Engine.play(description, new Progression());
+        Engine.play(new Progression());
     }
 }
