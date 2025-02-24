@@ -21,14 +21,14 @@ public class App {
     public static String chooseGame() {
         Scanner scanner = new Scanner(System.in);
 
-        App.showChoice();
+        showChoice();
         String choice = scanner.next();
         System.out.println("Your choice: " + choice);
         return choice;
     }
 
     public static void main(String[] args) {
-        String choice = App.chooseGame();
+        String choice = chooseGame();
 
         switch (choice) {
             case "1":
@@ -36,23 +36,18 @@ public class App {
                 Engine.getUserName();
                 break;
             case "2":
-                Cli.greet();
                 Even.startPlay();
                 break;
             case "3":
-                Cli.greet();
                 Calc.startPlay();
                 break;
             case "4":
-                Cli.greet();
                 GCD.startPlay();
                 break;
             case "5":
-                Cli.greet();
                 Progression.startPlay();
                 break;
             case "6":
-                Cli.greet();
                 Prime.startPlay();
                 break;
             default:
