@@ -56,7 +56,7 @@ public class Engine {
         int countOfWins = 0;
 
         for (var i = 0; i < getAttempts(); i++) {
-            game.initialize();
+            game.generate();
             String question = game.getQuestion();
             String answer = game.getAnswer();
             if (!roundIteration(question, answer, userName)) {

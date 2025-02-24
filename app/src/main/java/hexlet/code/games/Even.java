@@ -6,7 +6,7 @@ public final class Even implements Game {
     private String question;
     private String answer;
 
-    public void initialize() {
+    public void generate() {
         Random random = new Random();
         final int maxPossibleValue = 100;
         int questionBuild = random.nextInt(maxPossibleValue) + 1;

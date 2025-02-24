@@ -6,7 +6,7 @@ public final class Calc implements Game {
     private String question;
     private String answer;
 
-    public void initialize() {
+    public void generate() {
         Random random = new Random();
         final int maxValueOfRandomNumber = 50;
         int randomNumberOne = random.nextInt(maxValueOfRandomNumber) + 1;

@@ -6,7 +6,7 @@ public final class Prime implements Game {
     private String question;
     private String answer;
 
-    public void initialize() {
+    public void generate() {
         Random random = new Random();
         final int randomNumberMaxValue = 30;
         int questionBuild = random.nextInt(randomNumberMaxValue) + 2;

@@ -6,7 +6,7 @@ public final class GCD implements Game {
     private String question;
     private String answer;
 
-    public void initialize() {
+    public void generate() {
         Random random = new Random();
         final int smallestNumberMaxValue = 20;
         final int greatestNumberMaxValue = 300;

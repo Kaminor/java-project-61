@@ -6,7 +6,7 @@ public final class Progression implements Game {
     private String question;
     private String answer;
 
-    public void initialize() {
+    public void generate() {
         Random random = new Random();
         final int maxStartValue = 5;
         final int maxStepValue = 8;
