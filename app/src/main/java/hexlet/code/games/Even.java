@@ -3,13 +3,25 @@ import hexlet.code.Engine;
 import  java.util.Random;
 
 public final class Even implements Game {
-    public String[] generate() {
+    private String question;
+    private String answer;
+
+    public void initialize() {
         Random random = new Random();
         final int maxPossibleValue = 100;
-        int question = random.nextInt(maxPossibleValue) + 1;
-        String result = question % 2 == 0 ? "yes" : "no";
+        int questionBuild = random.nextInt(maxPossibleValue) + 1;
+        String result = questionBuild % 2 == 0 ? "yes" : "no";
 
-        return new String[]{String.valueOf(question), result};
+        question = String.valueOf(questionBuild);
+        answer = result;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public String getAnswer() {
+        return answer;
     }
 
     public static void startPlay() {

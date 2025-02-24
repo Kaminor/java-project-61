@@ -3,7 +3,10 @@ import hexlet.code.Engine;
 import  java.util.Random;
 
 public final class Calc implements Game {
-    public String[] generate() {
+    private String question;
+    private String answer;
+
+    public void initialize() {
         Random random = new Random();
         final int maxValueOfRandomNumber = 50;
         int randomNumberOne = random.nextInt(maxValueOfRandomNumber) + 1;
@@ -11,7 +14,7 @@ public final class Calc implements Game {
         String[] operations = {"+", "-", "*"};
         int operationIndex = random.nextInt(operations.length);
         String operationSymbol = operations[operationIndex];
-        String question = randomNumberOne + " " + operationSymbol + " " + randomNumberTwo;
+        String questionBuild = randomNumberOne + " " + operationSymbol + " " + randomNumberTwo;
         int result;
 
         switch (operationSymbol) {
@@ -27,7 +30,17 @@ public final class Calc implements Game {
             default:
                 result = 0;
         }
-        return new String[]{question, String.valueOf(result)};
+
+        question = questionBuild;
+        answer = String.valueOf(result);
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public String getAnswer() {
+        return answer;
     }
 
     public static void startPlay() {
