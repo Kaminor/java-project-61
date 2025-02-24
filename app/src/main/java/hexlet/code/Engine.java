@@ -3,9 +3,11 @@ import  java.util.Scanner;
 import hexlet.code.games.Game;
 
 public class Engine {
-    public static void greet() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name? ");
+    public static String getUserName() {
+        Scanner scanner = new Scanner(System.in);
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+        return userName;
     }
 
     public static boolean roundIteration(String question, String answer, String userName) {
@@ -48,18 +50,16 @@ public class Engine {
     }
 
     public static void play(String description, Game game) {
-        Scanner scanner = new Scanner(System.in);
-
-        greet();
-        String userName = scanner.next();
-        Cli.greetUser(userName);
-        System.out.println();
+        String userName = Engine.getUserName();
         System.out.println(description);
 
         int countOfWins = 0;
+
         for (var i = 0; i < getAttempts(); i++) {
-            String[] data = game.generate();
-            if (!roundIteration(data[0], data[1], userName)) {
+            game.initialize();
+            String question = game.getQuestion();
+            String answer = game.getAnswer();
+            if (!roundIteration(question, answer, userName)) {
                 break;
             } else {
                 countOfWins++;
