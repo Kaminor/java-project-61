@@ -1,21 +1,21 @@
 package hexlet.code;
 import  java.util.Scanner;
-import hexlet.code.games.Game;
 
 public class Engine {
-    public static String getUserName() {
-        Scanner scanner = new Scanner(System.in);
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-        return userName;
-    }
-
     public static boolean runIteration(String question, String answer, String userName) {
         System.out.println("Question: " + question);
         System.out.println("Your answer: ");
         Scanner scanner = new Scanner(System.in);
         String userAnswer = scanner.next();
-        return isCorrect(answer, userAnswer, userName);
+        if (userAnswer.equals(answer)) {
+            System.out.println("Correct!");
+            return true;
+        } else {
+            System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
+                    + "'" + answer + "'");
+            System.out.println("Let's try again, " + userName + "!");
+            return false;
+        }
     }
 
     public static int getAttempts() {
@@ -23,23 +23,13 @@ public class Engine {
         return attempts;
     }
 
-    public static boolean isCorrect(String correctAnswer, String userAnswer, String userName) {
-        if (userAnswer.equals(correctAnswer)) {
-            System.out.println("Correct!");
-            return true;
-        } else {
-            System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
-                    + "'" + correctAnswer + "'");
-            System.out.println("Let's try again, " + userName + "!");
-            return false;
-        }
-    }
-
     public static void play(Game game) {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name? ");
-        String userName = getUserName();
-        game.getDescription();
+        Scanner scanner = new Scanner(System.in);
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+        System.out.println(game.getDescription());
         int countOfWins = 0;
 
         for (var i = 0; i < getAttempts(); i++) {
