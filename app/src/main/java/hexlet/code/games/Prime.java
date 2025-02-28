@@ -1,5 +1,7 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
+import hexlet.code.Game;
+
 import  java.util.Random;
 
 public final class Prime implements Game {
@@ -20,8 +22,8 @@ public final class Prime implements Game {
         return new String[]{String.valueOf(question), result};
     }
 
-    public void getDescription() {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+    public String getDescription() {
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
     public static void startPlay() {
