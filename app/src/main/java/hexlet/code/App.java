@@ -32,8 +32,7 @@ public class App {
 
         switch (choice) {
             case "1":
-                Cli.greet();
-                Engine.getUserName();
+                Cli.greetUser();
                 break;
             case "2":
                 Even.startPlay();
